@@ -48,14 +48,21 @@ public class UserController {
 		try{
 			userService.doRegist(user);
 			//新增成功,返回1
-			return SysResult.build(1, "ok", null);
+			return SysResult.build(1, "success", null);
 		}catch(Exception e){
 			e.printStackTrace();
-			return SysResult.build(2, "不ok", null);
+			return SysResult.build(2, "fail", null);
 		}
 		
 	}
-	
+	/**
+	 * 登录
+	 * 登录信息正常 则添加SJ_TICKET 信息
+	 * @param user
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@RequestMapping(value="login",method=RequestMethod.GET)
 	@ResponseBody
 	public SysResult doLogin(User user,

@@ -52,7 +52,18 @@ public class UserServiceIpml {
 		
 	}
 	public String doLogin(User user) {
-		return null;
+		String url = UrlAddr.userRegistUrl+UrlAddr.userLoginKey03;
+		Map<String,Object> param = new HashMap<String,Object>();
+		param.put("username", user.getName());
+		param.put("userpass", user.getPass());
+		try{
+			String ticket = client.doGet(url, param);
+			return ticket;
+		}catch(Exception e){
+			e.printStackTrace();
+			return "";
+		}
+		
 	}
 
 }
