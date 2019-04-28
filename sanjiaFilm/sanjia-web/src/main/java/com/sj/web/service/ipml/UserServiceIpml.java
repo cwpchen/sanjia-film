@@ -52,7 +52,6 @@ public class UserServiceIpml {
 		
 	}
 	public String doLogin(User user) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
