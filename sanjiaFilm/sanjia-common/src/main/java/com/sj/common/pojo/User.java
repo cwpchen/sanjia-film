@@ -1,13 +1,21 @@
 package com.sj.common.pojo;
 
-import org.springframework.stereotype.Component;
+import java.io.Serializable;
 
-@Component
-public class User {
+public class User implements Serializable{
 
-	private String name;	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String name;  
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	private String pass;
-	
 	
 	public String getPass() {
 		return pass;
@@ -15,10 +23,18 @@ public class User {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
+	public User(String name, String pass) {
+		super();
 		this.name = name;
+		this.pass = pass;
 	}
+	public User() {
+		
+	}
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", pass=" + pass + "]";
+	}
+	
+	
 }
