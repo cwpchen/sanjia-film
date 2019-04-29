@@ -8,4 +8,8 @@ public class UrlAddr {
 	public final static String userLoginKey04 = "/query/";
 	
 	public final static String userLoginUrl="user.sj.com/user/";
+	
+	 public final static String storequeryUrl="store.sj.com/store/";
+	 public final static String storequerykey01="/query/";
+	
 }

@@ -1,6 +1,7 @@
 package com.sj.common.pojo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Purchase implements Serializable{
 	
@@ -8,27 +9,28 @@ public class Purchase implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String movie_name;  //电影名称
-	private String show_time;   //上映时间
+	private String movieName;  //电影名称
+	private String showTime;   //上映时间
 	private String category;   //分类
 	private float  score;   //评分
-	private String ciname_name;   //影院名字
+	private String cinameName;   //影院名字
 	private String address;   //影院地址
-	private String play_time;  //场次
+	private Date playTime;  //场次
 	private String platform;   //购票平台
 	private double price;   //价格	
 	private String herf;   //购票链接
-	public String getMovie_name() {
-		return movie_name;
+	private String favoriteId;//唯一标识，只做收藏的关联字段
+	public String getMovieName() {
+		return movieName;
 	}
-	public void setMovie_name(String movie_name) {
-		this.movie_name = movie_name;
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
 	}
-	public String getShow_time() {
-		return show_time;
+	public String getShowTime() {
+		return showTime;
 	}
-	public void setShow_time(String show_time) {
-		this.show_time = show_time;
+	public void setShowTime(String showTime) {
+		this.showTime = showTime;
 	}
 	public String getCategory() {
 		return category;
@@ -42,11 +44,11 @@ public class Purchase implements Serializable{
 	public void setScore(float score) {
 		this.score = score;
 	}
-	public String getCiname_name() {
-		return ciname_name;
+	public String getCinameName() {
+		return cinameName;
 	}
-	public void setCiname_name(String ciname_name) {
-		this.ciname_name = ciname_name;
+	public void setCinameName(String cinameName) {
+		this.cinameName = cinameName;
 	}
 	public String getAddress() {
 		return address;
@@ -54,12 +56,7 @@ public class Purchase implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getPlay_time() {
-		return play_time;
-	}
-	public void setPlay_time(String play_time) {
-		this.play_time = play_time;
-	}
+
 	public String getPlatform() {
 		return platform;
 	}
@@ -78,25 +75,37 @@ public class Purchase implements Serializable{
 	public void setHerf(String herf) {
 		this.herf = herf;
 	}
-	@Override
-	public String toString() {
-		return "Purchase [movie_name=" + movie_name + ", show_time=" + show_time + ", category=" + category + ", score="
-				+ score + ", ciname_name=" + ciname_name + ", address=" + address + ", play_time=" + play_time
-				+ ", platform=" + platform + ", price=" + price + ", herf=" + herf + "]";
+	public String getFavoriteId() {
+		return favoriteId;
 	}
-	public Purchase(String movie_name, String show_time, String category, float score, String ciname_name,
-			String address, String play_time, String platform, double price, String herf) {
+	public void setFavoriteId(String favoriteId) {
+		this.favoriteId = favoriteId;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	
+	public Purchase(String movieName, String showTime, String category, float score, String cinameName,
+			String address, Date playTime, String platform, double price, String herf,String favoriteId) {
 		super();
-		this.movie_name = movie_name;
-		this.show_time = show_time;
+		this.movieName = movieName;
+		this.showTime = showTime;
 		this.category = category;
 		this.score = score;
-		this.ciname_name = ciname_name;
+		this.cinameName = cinameName;
 		this.address = address;
-		this.play_time = play_time;
+		this.playTime = playTime;
 		this.platform = platform;
 		this.price = price;
 		this.herf = herf;
+		this.favoriteId = favoriteId;
+	}
+	public Date getPlayTime() {
+		return playTime;
+	}
+	public void setPlayTime(Date playTime) {
+		this.playTime = playTime;
 	}
 	public Purchase() {
 		
