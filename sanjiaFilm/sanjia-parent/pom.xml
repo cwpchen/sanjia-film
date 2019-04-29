@@ -7,27 +7,28 @@
 	<version>1.0</version>
 	<name>sanjia-parent Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.2.RELEASE</version>
 	</parent>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
 		<!-- web 应用依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-		<groupId>org.apache.commons</groupId>
-		<artifactId>commons-lang3</artifactId>
-		<version>3.3.2</version>
-		</dependency>
+	
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -63,6 +64,7 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.3.2</version>
 		</dependency>
+			
 		<!-- elasticsearch -->
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
@@ -79,12 +81,6 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.3.2</version>
 		</dependency>
 
 		<!--使jsp页面生效 -->
@@ -104,7 +100,7 @@
 			<version>4.3.7.RELEASE</version>
 		</dependency>
 	</dependencies>
-	
+
 	<dependencyManagement>
 		<!-- 将持久层相关依赖 引入这里 声明让自工程继承 -->
 		<dependencies>
@@ -133,7 +129,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<finalName>sanjia-parent</finalName>
 	</build>
