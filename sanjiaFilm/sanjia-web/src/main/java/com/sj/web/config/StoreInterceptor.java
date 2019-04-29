@@ -41,9 +41,8 @@ public class StoreInterceptor implements HandlerInterceptor {
 				request.setAttribute("name", user.getName());
 				return true;
 			}
-			
 		}
-		response.sendRedirect("/");
+		response.sendRedirect("login");
 		return false;
 	}
 

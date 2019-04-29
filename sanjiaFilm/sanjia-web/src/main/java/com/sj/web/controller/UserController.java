@@ -5,17 +5,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.sj.common.pojo.User;
 import com.sj.common.utils.CookieUtils;
 import com.sj.common.vo.SysResult;
 import com.sj.web.service.ipml.UserServiceIpml;
 
-@RestController
+@Controller
 @RequestMapping("user")
 public class UserController {
 
