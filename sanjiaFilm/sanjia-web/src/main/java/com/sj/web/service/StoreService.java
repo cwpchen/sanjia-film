@@ -37,8 +37,13 @@ public class StoreService {
 			return null;
 		}
 	}
+	/**
+	 * 删除用户收藏的购票信息
+	 * @param favorite
+	 * @return
+	 */
 	public String deleteStore(Favorite favorite) {
-		String url = UrlAddr.storequeryUrl + UrlAddr.storequerykey02;
+		String url = UrlAddr.storequeryUrl + UrlAddr.storedeletekey02;
 		Map<String,Object> param  = new HashMap<String,Object>();
 		param.put("username", favorite.getUserName());
 		param.put("favoriteId", favorite.getFavoriteId());
@@ -46,11 +51,30 @@ public class StoreService {
 			String jsondata = client.doGet(url, param);
 			return jsondata;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return "";
 		}
 	}
+	/**
+	 * 新增购票收藏信息
+	 * @param favorite
+	 * @return
+	 */
+	public String addStore(Favorite favorite) {
+		String url = UrlAddr.storequeryUrl + UrlAddr.storeaddkey03;
+		Map<String,Object> param  = new HashMap<String,Object>();
+		param.put("username", favorite.getUserName());
+		param.put("favoriteId", favorite.getFavoriteId());
+		try {
+			String jsondata = client.doGet(url, param);
+			return jsondata;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "";
+		}
+	}
+	
+	
 	
 	
 

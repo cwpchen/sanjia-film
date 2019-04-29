@@ -22,6 +22,12 @@ public class StoreController {
 	@Autowired
 	private StoreService storeService;
 
+	/**
+	 * 显示用户收藏的电影信息
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="mystore",method=RequestMethod.GET)
 	public String queryStore(HttpServletRequest request,
 			Model model) {
@@ -30,13 +36,27 @@ public class StoreController {
 		model.addAttribute("purchaseList", purchases);
 		return "store";
 	}
-	
+	/**
+	 * 删除用户收藏的购票信息
+	 * @param favoriteId
+	 * @param request
+	 * @return
+	 */
+	 
 	@RequestMapping(value="delete/{favoriteId}",method=RequestMethod.GET)
 	public String deleteStore(@PathVariable String favoriteId,
 			HttpServletRequest request){
 		String username = (String)request.getAttribute("name");
 		Favorite favorite = new Favorite(username,favoriteId);
 		String result = storeService.deleteStore(favorite);
+		return "redirect:/store/mystore";
+	}
+	
+	public String addStore(@PathVariable String favoriteId,
+			HttpServletRequest request){
+		String username = (String)request.getAttribute("name");
+		Favorite favorite = new Favorite(username,favoriteId);
+		String result = storeService.addStore(favorite);
 		return "redirect:/store/mystore";
 	}
 	

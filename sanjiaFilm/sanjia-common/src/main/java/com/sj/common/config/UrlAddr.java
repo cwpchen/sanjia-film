@@ -11,6 +11,7 @@ public class UrlAddr {
 	
 	 public final static String storequeryUrl="store.sj.com/store/";
 	 public final static String storequerykey01="/query/";
-	 public final static String storequerykey02="/delete/";
+	 public final static String storedeletekey02="/delete/";
+	 public final static String storeaddkey03="/add/";
 	
 }
